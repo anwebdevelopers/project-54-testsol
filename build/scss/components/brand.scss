@@ -1,0 +1,140 @@
+.brand {
+    margin: 5rem 0 0 0;
+    display: flex;
+}
+.brand__box {
+    flex: 0 0 auto;
+    order: 1;
+    align-self: flex-start;
+    width: 30rem;
+    padding: 8.5rem 2rem 5.5rem 5.5rem;
+    margin: -15rem 0 0 0;
+    background-image: linear-gradient(#f2f2f2, #f2f2f2),
+                        linear-gradient(#f2f2f2, #f2f2f2),
+                        linear-gradient(#f2f2f2, #f2f2f2),
+                        linear-gradient(#f2f2f2, #f2f2f2);
+    background-size: 6rem 6rem,
+                        3rem 3rem,
+                        calc(100% - 3.5rem) calc(100% - 10rem),
+                        3rem 3rem;
+    background-position: 100% 0,
+                            0 6.5rem,
+                            3.5rem 6.5rem,
+                            calc(100% - 7rem) 100%;
+    background-repeat: no-repeat;
+}
+.brand__logo {
+    margin: 0;
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.brand__button {
+    display: block;
+    padding: 1rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+.brand__img {
+    flex: 0 0 auto;
+    margin: 0;
+    width: 26rem;
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.brand__content {
+    flex: 1 1 auto;
+    position: relative;
+    margin: 0 0 0 5rem;
+    button {
+        @include btn;
+        position: relative;
+        margin: 2rem 0 0 0;
+        padding: 0 0 0 2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: inherit;
+        text-transform: uppercase;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            left: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-image: url("../img/icon-arrow-dark.png");
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: all .3s ease;
+        }
+        &.hide {
+            &:before {
+                transform: translateY(-50%) rotate(-90deg);
+            }
+        }
+    }
+}
+.brand__content-inner {
+    overflow: hidden;
+    p {
+        margin: 2rem 0 0 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    .brand {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .brand__box {
+        margin: 0;
+    }
+    .brand__img {
+        align-self: center;
+    }
+    .brand__content {
+        order: 2;
+        width: 100%;
+        margin: 3rem 0 0 0;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .brand {
+        display: block;
+    }
+    .brand__box {
+        //margin: 0 auto;
+        width: auto;
+    }
+    .brand__img {
+        width: auto;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+
+}

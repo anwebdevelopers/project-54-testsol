@@ -50,11 +50,15 @@ body {
 	margin: 0;
 	padding: 0;
 	font-size: 1.8rem;
-	line-height: 1.4;
+	line-height: 1.25;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif;
 	color: #4d5165;
 	background-color: #fff;
+	overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: $main-color;
 }
 .container {
 	max-width: 1280px;
@@ -71,11 +75,156 @@ body {
 }
 a {
 	outline: none !important;
+	color: $main-color;
+}
+.main__container {
+	position: relative;
+}
+.main__breadcrumbs {
+	margin: 0 32rem 0 0;
+	a, span {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 3.5rem 0 0;
+		margin: .5rem .5rem 0 0;
+		text-decoration: none;
+		font-weight: 600;
+		color: inherit;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-40%);
+			right: 0;
+			width: 3rem;
+			height: 1.5rem;
+			background-image: url(../img/icon-breadcrumbs-right.png);
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		&:last-child {
+			&:before {
+				transform: translateY(-10%);
+				background-image: url(../img/icon-breadcrumbs-down.png);
+			}
+		}
+		transition: all .5s ease;
+    	&:hover, &:active {
+    		color: $main-color;
+        }
+	}
+}
+.main__title {
+	margin: 2rem 32rem 0 0;
+	font-size: 4rem;
+	text-transform: uppercase;
+}
+.main__box {
+    display: flex;
+    flex-wrap: wrap;
+    > .section {
+        width: 46%;
+        &:nth-child(even) {
+            margin: 5rem 0 0 8%;
+        }
+    }
+}
+.section {
+    margin: 5rem 0 0 0;
+}
+.section__title {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+.button {
+	@include btn;
+	padding: 1rem 3rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: inherit;
+	box-shadow: inset 0 0 0 1px $gray;
+	transition: all .5s ease;
+	&:hover, &:active {
+		color: $main-color;
+		box-shadow: inset 0 0 0 2px $main-color;
+	}
+}
+.main__button-top {
+    @include btn;
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 4rem;
+    height: 4rem;
+    box-shadow: inset 0 0 0 1px $gray;
+    background-color: #fff;
+	box-shadow: inset 0 0 0 1px $gray, 5px 0 20px 0 transparentize(#000, .8);
+    background-image: url("../img/icon-arrow-dark.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: rotate(90deg);
+	transition: all 0.5s ease;
+
+	&:active,
+	&:hover {
+		box-shadow: inset 0 0 0 2px $main-color, 5px 0 20px 0 transparentize(#000, .8);
+		background-image: url("../img/icon-arrow-purple.png");
+	}
+}
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+	.main__box {
+	    display: block;
+	    > .section {
+	        width: auto;
+	        &:nth-child(even) {
+	            margin: 5rem 0 0 0;
+	        }
+	    }
+	}
+	.main__breadcrumbs,
+	.main__title {
+		margin-right: 0;
+	}
+	.section__title {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 320px) {
+
 }
 
 
 //Custom Styles Here
 @import "components/header.scss";
+@import "components/about.scss";
+@import "components/activities.scss";
+@import "components/news.scss";
+@import "components/brands.scss";
+@import "components/footer.scss";
+@import "components/catalog.scss";
+@import "components/brand.scss";
+@import "components/product.scss";
+
 
 //@import "build/scss/components/magnific-popup.scss";
 

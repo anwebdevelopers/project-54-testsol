@@ -1,0 +1,44 @@
+.about {
+    position: relative;
+    z-index: 1;
+}
+.about__title {
+    margin: 0;
+    width: 36%;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+.about__text {
+    margin: 2rem 0 0 0;
+    width: 44%;
+    font-size: 2rem;
+    font-weight: 600;
+}
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    .about__title,
+    .about__text {
+        width: auto;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 320px) {
+
+}
