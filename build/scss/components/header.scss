@@ -19,6 +19,7 @@
 .header__logo {
     flex: 1 0 auto;
     margin: 0;
+    width: 28rem;
     border-right: 1px solid $main-color-hover;
     padding: 1.4rem 2rem;
     display: flex;
@@ -302,6 +303,10 @@
         &:required:valid {
         	color: #fff;
         }
+        &:focus::-webkit-input-placeholder {color: transparent}
+        &:focus::-moz-placeholder          {color: transparent}
+        &:focus:-moz-placeholder           {color: transparent}
+        &:focus:-ms-input-placeholder      {color: transparent}
         padding: 2.4rem 1rem;
         font-size: inherit;
         color: #fff;
@@ -369,7 +374,7 @@
     align-items: center;
     justify-content: center;
     transition: all .5s ease;
-    &:hover, &:active {
+    &:hover, &:active, &.active {
         background-color: $main-color-hover;
     }
 }
@@ -510,13 +515,7 @@
 
 
 @media only screen and (max-width : 1280px) {
-    html {
-        font-size: 9px;
-    }
-    .container {
-        max-width: 992px;
-        padding: 0 15px;
-    }
+
     .header__menu {
         >li {
             >a {
@@ -527,7 +526,7 @@
     .header__slider {
         position: relative;
         z-index: 0;
-        margin: -11rem -15px -35rem 0;
+        margin: -9rem -15px -35rem 0;
         padding: 0 0 35rem 0;
         &.owl-carousel {
             z-index: 0;
@@ -537,12 +536,6 @@
 }
 
 @media only screen and (max-width : 992px) {
-    html {
-        font-size: 8px;
-    }
-    .container {
-        max-width: 768px;
-    }
     .header__logo {
         flex: 0 0 auto;
         border: none;
@@ -559,7 +552,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: 1px;
         transform: translateY(100%);
         background-color: $main-color;
         border-top: 1px solid $main-color-hover;
@@ -570,6 +563,7 @@
     .header__button-search {
         flex: 0 0 auto;
         width: 7rem;
+        border-right: none;
     }
     // .header__nav {
     //     flex-wrap: wrap;
@@ -587,48 +581,7 @@
     // .header__menu {
     //     border-top: 1px solid $main-color-hover;
     // }
-    .header__slider {
-        position: relative;
-        z-index: 0;
-        margin: 0;
-        padding: 0;
-        &.owl-carousel {
-            z-index: 0;
-            width: 100%;
-            .owl-stage-outer {
-                margin: 0;
-                padding: 0;
-                .owl-stage {
-                    margin: 0;
-                    padding: 0;
-                    .owl-item {
-                        margin: 0;
-                        padding: 0;
-                    }
-                }
-            }
-            .owl-nav {
-                justify-content: flex-end;
-            }
-        }
-    }
-    .header__slider-item {
-        display: block;
-    }
-    .header__slider-img {
-        width: auto;
-        margin: 0;
-        // img {
-        //     max-width: 480px;
-        //     margin: 0 auto;
-        // }
-    }
-    .header__slider-text {
-        margin: 4rem 0 0 0;
-        width: auto;
-        text-align: center;
 
-    }
 }
 
 @media only screen and (max-width : 768px) {
@@ -670,6 +623,8 @@
         visibility: visible;
         transform: none;
         opacity: 1;
+        background-color: $main-color;
+        border-bottom: 1px solid $main-color-hover;
     }
     .header__menu {
         display: block;
@@ -678,6 +633,48 @@
             border-bottom: 1px solid $main-color-hover;
         }
     }
+    .header__slider {
+        position: relative;
+        z-index: 0;
+        margin: 0;
+        padding: 0;
+        &.owl-carousel {
+            z-index: 0;
+            width: 100%;
+            .owl-stage-outer {
+                margin: 0;
+                padding: 0;
+                .owl-stage {
+                    margin: 0;
+                    padding: 0;
+                    .owl-item {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+            .owl-nav {
+                justify-content: flex-end;
+            }
+        }
+    }
+    .header__slider-item {
+        display: block;
+    }
+    .header__slider-img {
+        width: auto;
+        margin: 0;
+        // img {
+        //     max-width: 480px;
+        //     margin: 0 auto;
+        // }
+    }
+    .header__slider-text {
+        margin: 4rem 0 0 0;
+        width: auto;
+        text-align: center;
+    }
+
 }
 
 @media only screen and (max-width : 480px) {

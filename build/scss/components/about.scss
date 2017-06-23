@@ -20,11 +20,7 @@
 }
 
 @media only screen and (max-width : 992px) {
-    .about__title,
-    .about__text {
-        width: auto;
-        text-align: center;
-    }
+
 }
 
 @media only screen and (max-width : 768px) {
@@ -32,7 +28,11 @@
 }
 
 @media only screen and (max-width : 640px) {
-
+    .about__title,
+    .about__text {
+        width: auto;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width : 480px) {

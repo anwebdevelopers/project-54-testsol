@@ -43,7 +43,9 @@
         content: '|';
         position: absolute;
         left: -3rem;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.8rem;
     }
     &.footer__links-item_number {
         font-size: 3rem;

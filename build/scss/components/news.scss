@@ -37,7 +37,9 @@
                     background-image: url("../img/icon-arrow-purple.png");
                 }
             }
-
+            .owl-prev {
+                margin-right: -1px;
+            }
             .owl-next {
                 margin-left: -1px;
                 transform: rotate(180deg);

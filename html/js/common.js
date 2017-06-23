@@ -163,18 +163,80 @@ $(function() {
     });
 
     /*******************************************************/
+    //Ввод в поле формы
+    /*******************************************************/
+
+    $('.quantity').on('click', 'button', function() {
+        var $this = $(this),
+        value = Number($this.siblings('input').val());
+        if($this.hasClass('plus')) {
+            $this.siblings('input').val( value + 1);
+        } else {
+            if (value > 1) {
+                $this.siblings('input').val( value - 1);
+            }
+        }
+    });
+
+    /*******************************************************/
+    //popup
+    /*******************************************************/
+
+    $('.popup-with-move-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
+
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+    });
+
+    $('.basket__close').click(function() {
+        $('.mfp-close').trigger('click');
+    });
+
+    $('.popup').submit(function() {
+        var $this = $(this);
+        // $.ajax({
+        //     type: 'POST',
+        //     url: '', //Change
+        //     data: $this.serialize()
+        // }).done(function() {
+        //
+        // });
+        $this.trigger('reset');
+        $.magnificPopup.open({
+            items: {
+                src: '#success'
+            },
+            type: 'inline'
+        });
+        setTimeout(function() {
+            $.magnificPopup.close();
+        }, 3000);
+        return false;
+    });
+
+    /*******************************************************/
     //Chrome Smooth Scroll
     /*******************************************************/
     try {
         $.browserSelector();
-        if ($("html").hasClass("chrome")) {
+        if ($('html').hasClass('chrome')) {
             $.smoothScroll();
         }
     } catch (err) {
 
     };
 
-    $("img, a").on("dragstart", function(event) {
+    $('img, a').on('dragstart', function(event) {
         event.preventDefault();
     });
 

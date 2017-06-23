@@ -1,0 +1,77 @@
+.popup {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: #fff;
+    border: 1px solid $gray;
+    box-shadow:  5px 0 20px 0 transparentize(#000, .8);
+}
+.popup__title {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.popup__text {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.popup__item {
+    display: block;
+    margin: 3rem 0 0 0;
+    span {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $main-color;
+    }
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        margin: .5rem 0 0 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        outline: none;
+        box-shadow: none;
+        border-radius: 0;
+        border: 1px solid $gray;
+        font-size: 1.6rem;
+        line-height: 1;
+        font-family: inherit;
+        color: inherit;
+    }
+    input {
+        height: 4rem;
+    }
+    textarea {
+        min-height: 10rem;
+        resize: vertical;
+    }
+}
+.popup__buttons {
+    margin: 4.5rem 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.basket__close {
+    margin: .5rem 0;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+}
+.basket__submit {
+    margin: .5rem 0;
+    padding: 1rem 1.5rem;
+}
+#success {
+    .popup__buttons {
+        justify-content: center;
+    }
+}

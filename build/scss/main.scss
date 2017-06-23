@@ -120,6 +120,9 @@ a {
 	font-size: 4rem;
 	text-transform: uppercase;
 }
+.main__text {
+	margin: 3rem 0 0 0;
+}
 .main__box {
     display: flex;
     flex-wrap: wrap;
@@ -151,6 +154,14 @@ a {
 		color: $main-color;
 		box-shadow: inset 0 0 0 2px $main-color;
 	}
+	&.button_purple {
+		box-shadow: none;
+		color: #fff;
+		background-color: $main-color;
+		&:hover, &:active {
+			background-color: $main-color-hover;
+		}
+	}
 }
 .main__button-top {
     @include btn;
@@ -159,7 +170,6 @@ a {
     right: -50px;
     width: 4rem;
     height: 4rem;
-    box-shadow: inset 0 0 0 1px $gray;
     background-color: #fff;
 	box-shadow: inset 0 0 0 1px $gray, 5px 0 20px 0 transparentize(#000, .8);
     background-image: url("../img/icon-arrow-dark.png");
@@ -174,11 +184,82 @@ a {
 		background-image: url("../img/icon-arrow-purple.png");
 	}
 }
+.content {
+	h1, h2, h3, h4, h5, h6, p, ul {
+		margin: 2rem 0;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 600;
+	}
+	h2 {
+		font-size: 3.5rem;
+	}
+	h3 {
+		font-size: 2.5rem;
+	}
+	ul {
+		padding: 0;
+		list-style: none;
+		li {
+			padding: 0 0 0 2rem;
+			margin: .5rem 0 0 0;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				left: .5rem;
+				top: .8rem;
+				width: .5rem;
+				height: .5rem;
+				background-color: $main-color;
+			}
+		}
+	}
+}
+@media only screen and (max-width:1380px) {
+	.main__button-top {
+		position: relative;
+		right: auto;
+		margin: 3rem 0 0 calc(100% - 4rem);
+	}
+	.home {
+		.main__button-top {
+			position: relative;
+			bottom: -11rem;
+		}
+	}
+}
 @media only screen and (max-width : 1280px) {
+	html {
+        font-size: 9px;
+    }
+    .container {
+        max-width: 992px;
+        padding: 0 15px;
+    }
 
 }
 
 @media only screen and (max-width : 992px) {
+	html {
+        font-size: 8px;
+    }
+	.container {
+        max-width: 768px;
+    }
+	.main__breadcrumbs,
+	.main__title {
+		margin-right: 0;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	html {
+        font-size: 7px;
+    }
+}
+
+@media only screen and (max-width : 640px) {
 	.main__box {
 	    display: block;
 	    > .section {
@@ -188,21 +269,9 @@ a {
 	        }
 	    }
 	}
-	.main__breadcrumbs,
-	.main__title {
-		margin-right: 0;
-	}
 	.section__title {
 		text-align: center;
 	}
-}
-
-@media only screen and (max-width : 768px) {
-
-}
-
-@media only screen and (max-width : 640px) {
-
 }
 
 @media only screen and (max-width : 480px) {
@@ -224,9 +293,10 @@ a {
 @import "components/catalog.scss";
 @import "components/brand.scss";
 @import "components/product.scss";
+@import "components/popup.scss";
 
 
-//@import "build/scss/components/magnific-popup.scss";
+
 
 //ALWAYS END
 //@import "components/media.scss";
@@ -237,4 +307,5 @@ a {
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
-//@import "html/libs/magnific-popup/dist/magnific-popup";
+@import "html/libs/magnific-popup/dist/magnific-popup";
+@import "build/scss/components/magnific-popup.scss";
