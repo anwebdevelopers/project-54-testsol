@@ -209,7 +209,17 @@ $(function() {
         //     url: '', //Change
         //     data: $this.serialize()
         // }).done(function() {
-        //
+        //         $this.trigger('reset');
+        //         $.magnificPopup.open({
+        //             items: {
+        //                 src: '#success'
+        //             },
+        //             type: 'inline'
+        //         });
+        //         setTimeout(function() {
+        //             $.magnificPopup.close();
+        //         }, 3000);
+        //         return false;
         // });
         $this.trigger('reset');
         $.magnificPopup.open({
@@ -223,6 +233,20 @@ $(function() {
         }, 3000);
         return false;
     });
+
+    /*******************************************************/
+    //gallery Page Nav
+    /*******************************************************/
+
+    $('.gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1]
+		}
+	});
 
     /*******************************************************/
     //Chrome Smooth Scroll

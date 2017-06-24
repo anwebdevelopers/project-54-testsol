@@ -25,6 +25,7 @@
 }
 .brand__logo {
     margin: 0;
+    text-align: center;
     img {
         max-width: 100%;
         width: auto;
@@ -126,7 +127,7 @@
         display: block;
     }
     .brand__box {
-        //margin: 0 auto;
+        margin: 0 3.5rem 0 0;
         width: auto;
     }
     .brand__img {
